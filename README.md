@@ -1,1 +1,6 @@
 # MachineLearing_Project
+
+MLFLOW_TRACKING_URI=Your_url
+MLFLOW_TRACKING_USERNAME=username
+MLFLOW_TRACKING_PASSWORD=Your_password
+python script.py
