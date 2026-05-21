@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduPredict — Student Performance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d1b2a;
+      --navy-mid: #162032;
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --cream: #f5f0e8;
+      --text-soft: #8a9bb0;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      color: var(--cream);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Decorative background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(201,168,76,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 90%, rgba(13,27,42,0.9) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Dot grid */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(201,168,76,0.15) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 3rem 2rem;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.9s 0.1s ease both;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      animation: fadeUp 0.9s 0.2s ease both;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-soft);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      animation: fadeUp 0.9s 0.3s ease both;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 1rem 2.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+      box-shadow: 0 4px 24px rgba(201,168,76,0.25);
+      animation: fadeUp 0.9s 0.4s ease both;
+    }
+
+    .cta-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+    }
+
+    .stats {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      margin-top: 4rem;
+      animation: fadeUp 0.9s 0.5s ease both;
+    }
+
+    .stat { text-align: center; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.2rem;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      .stats { gap: 1.5rem; }
+      h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="badge">✦ AI-Powered Academic Insight</div>
+    <h1>Predict Your<br/><span>Exam Performance</span></h1>
+    <p class="subtitle">Enter your academic profile and let our intelligent model forecast your mathematics score with precision.</p>
+    <a href="/predictdata" class="cta-btn">Get Your Prediction →</a>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Accuracy</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Factors</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">ML</div>
+        <div class="stat-label">Powered</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
